@@ -125,11 +125,11 @@ namespace MyGUI
 					MYGUI_EXCEPT("No supported shader was found. Only glsl, glsles and hlsl are implemented so far.")
 
 				mVertexProgram = Ogre::HighLevelGpuProgramManager::getSingleton().createProgram(
-					"MyGUI_VP." + shaderLanguage,
+					"MyGUI_Ogre_VP." + shaderLanguage,
 					OgreDataManager::getInstance().getGroup(),
 					shaderLanguage,
 					Ogre::GPT_VERTEX_PROGRAM);
-				mVertexProgram->setSourceFile("MyGUI_VP." + shaderLanguage);
+				mVertexProgram->setSourceFile("MyGUI_Ogre_VP." + shaderLanguage);
 				if (shaderLanguage == "hlsl")
 				{
 					mVertexProgram->setParameter("target", "vs_4_0");
@@ -138,11 +138,11 @@ namespace MyGUI
 				mVertexProgram->load();
 
 				mFragmentProgram = Ogre::HighLevelGpuProgramManager::getSingleton().createProgram(
-					"MyGUI_FP." + shaderLanguage,
+					"MyGUI_Ogre_FP." + shaderLanguage,
 					OgreDataManager::getInstance().getGroup(),
 					shaderLanguage,
 					Ogre::GPT_FRAGMENT_PROGRAM);
-				mFragmentProgram->setSourceFile("MyGUI_FP." + shaderLanguage);
+				mFragmentProgram->setSourceFile("MyGUI_Ogre_FP." + shaderLanguage);
 				if (shaderLanguage == "hlsl")
 				{
 					mFragmentProgram->setParameter("target", "ps_4_0");
